@@ -1,3 +1,7 @@
-export const App = () => {
-  return <div>App</div>;
+import Router from '@router/Router';
+
+const App = () => {
+  return <Router />;
 };
+
+export default App;
