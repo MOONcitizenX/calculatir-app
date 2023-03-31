@@ -20,7 +20,8 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
       '@store': path.resolve(__dirname, './src/store'),
       '@utils': path.resolve(__dirname, './src/utils'),
-      '@public': path.resolve(__dirname, './public'),
+      '@public': path.resolve(__dirname, './sr/public'),
+      '@router': path.resolve(__dirname, './src/router'),
     },
   },
 });
