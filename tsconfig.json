@@ -24,7 +24,8 @@
       "@store/*": ["store/*"],
       "@utils/*": ["utils/*"],
       "@public/*": ["public/*"],
-      "@router/*": ["router/*"]
+      "@router/*": ["router/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   "include": ["src"],
