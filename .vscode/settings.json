@@ -3,9 +3,5 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2,
   "files.autoSave": "off",
-  "files.eol": "\n",
-  "prettier.singleQuote": true,
-  "prettier.tabWidth": 2,
-  "prettier.useTabs": true,
-  "prettier.trailingComma": "none"
+  "files.eol": "\n"
 }
