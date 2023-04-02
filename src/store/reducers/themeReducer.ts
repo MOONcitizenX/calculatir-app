@@ -1,4 +1,4 @@
-import { type ThemeAction, ThemeActionTypes } from '@store/types/theme.types';
+import { type ThemeAction, ThemeActionTypes } from '@store/actions/themeActions';
 import { lightTheme } from '@styles/themes/themes';
 
 const initialTheme = lightTheme;

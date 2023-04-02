@@ -1,5 +1,16 @@
-import { type ThemeAction, ThemeActionTypes } from '@store/types/theme.types';
 import { coloredTheme, darkTheme, lightTheme } from '@styles/themes/themes';
+import { type DefaultTheme } from 'styled-components';
+
+export enum ThemeActionTypes {
+  LIGHT = 'LIGHT',
+  DARK = 'DARK',
+  COLORED = 'COLORED',
+}
+
+export interface ThemeAction {
+  type: 'LIGHT' | 'DARK' | 'COLORED';
+  payload: DefaultTheme;
+}
 
 export const setLightTheme = (): ThemeAction => {
   return {
