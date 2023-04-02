@@ -1,8 +1,6 @@
-import {
-  type HistoryAction,
-  type HistoryState,
-  HistoryActionTypes,
-} from '@store/types/history.types';
+import { type HistoryAction, HistoryActionTypes } from '@store/actions/historyActions';
+
+export type HistoryState = string[];
 
 const initialHistory: HistoryState = [];
 
