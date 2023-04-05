@@ -1,4 +1,4 @@
-import { useTypedSelector } from 'hooks/useTypedSelector';
+import { useTypedSelector } from '@hooks/useTypedSelector';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 

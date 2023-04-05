@@ -1,25 +1,28 @@
 import ROUTES from '@constants/routes';
-import { NavLink } from 'react-router-dom';
+import { StyledHeader, StyledNavLink, StyledNavList } from '@styles/components/Header.style';
+import { StyledContainer } from '@styles/components/shared/shared';
 
 export const Header = () => {
   return (
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to={ROUTES.root}>HomeFC</NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.homeCC}>HomeCC</NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.settingsFC}>SettingsFC</NavLink>
-          </li>
-          <li>
-            <NavLink to={ROUTES.settingsCC}>SettingsCC</NavLink>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <StyledHeader>
+      <StyledContainer>
+        <nav>
+          <StyledNavList>
+            <li>
+              <StyledNavLink to={ROUTES.root}>HomeFC</StyledNavLink>
+            </li>
+            <li>
+              <StyledNavLink to={ROUTES.homeCC}>HomeCC</StyledNavLink>
+            </li>
+            <li>
+              <StyledNavLink to={ROUTES.settingsFC}>SettingsFC</StyledNavLink>
+            </li>
+            <li>
+              <StyledNavLink to={ROUTES.settingsCC}>SettingsCC</StyledNavLink>
+            </li>
+          </StyledNavList>
+        </nav>
+      </StyledContainer>
+    </StyledHeader>
   );
 };

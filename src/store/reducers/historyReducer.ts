@@ -1,15 +1,22 @@
 import { type HistoryAction, HistoryActionTypes } from '@store/actions/historyActions';
 
-export type HistoryState = string[];
+export interface HistoryState {
+  historyList: Array<string | undefined>;
+}
 
-const initialHistory: HistoryState = [];
+const initialHistory: HistoryState = {
+  historyList: [],
+};
 
-export const historyReducer = (state = initialHistory, action: HistoryAction) => {
+export const historyReducer = (
+  state: HistoryState = initialHistory,
+  action: HistoryAction
+): HistoryState => {
   switch (action.type) {
     case HistoryActionTypes.ADD:
-      return [...state, action.payload];
+      return { historyList: [...state.historyList, action.payload] };
     case HistoryActionTypes.CLEAR:
-      return [];
+      return initialHistory;
     default:
       return state;
   }
