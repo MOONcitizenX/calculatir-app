@@ -1,10 +1,10 @@
-import Router from '@router/Router';
-import GlobalStyles from '@styles/Global.styles';
-import Theme from '@styles/Theme';
 import { Provider } from 'react-redux';
+import { Theme } from '@styles/Theme';
+import { Router } from '@router/Router';
 import { store } from './store';
+import GlobalStyles from '@styles/Global.styles';
 
-const App = () => {
+export const App = () => {
   return (
     <>
       <Provider store={store}>
@@ -16,5 +16,3 @@ const App = () => {
     </>
   );
 };
-
-export default App;

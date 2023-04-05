@@ -1,7 +1,7 @@
 import ROUTES from '@constants/routes';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+export const Header = () => {
   return (
     <header>
       <nav>
@@ -23,5 +23,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;
