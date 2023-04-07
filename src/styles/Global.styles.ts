@@ -8,8 +8,7 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
   font-weight: normal;
-  transition: background-color 0.3s ease-in-out;
-  transition: color 0.2s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
 }
 body{
   background-color: ${({ theme }) => theme.colors.background.secondary};

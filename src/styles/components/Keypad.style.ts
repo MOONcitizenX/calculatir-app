@@ -33,7 +33,7 @@ export const StyledKeypadButton = styled.button<KeypadButtonProps>`
     box-shadow: inset 2px 2px 12px ${({ theme }) => theme.colors.shadow.primary},
       inset -2px -2px 12px ${({ theme }) => theme.colors.shadow.secondary};
   }
-  &:focus {
+  &:focus-visible {
     outline: 1px solid ${({ theme }) => theme.colors.text.secondary};
   }
 `;
