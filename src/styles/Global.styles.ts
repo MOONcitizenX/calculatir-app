@@ -6,10 +6,12 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
 
   box-sizing: border-box;
-  font-family: 'Roboto' sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
 }
 body{
-  background-color: 'black';
+  background-color: ${({ theme }) => theme.colors.background.secondary};
 }
 a {
   text-decoration: none;

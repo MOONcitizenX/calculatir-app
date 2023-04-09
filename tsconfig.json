@@ -25,6 +25,7 @@
       "@utils/*": ["utils/*"],
       "@public/*": ["public/*"],
       "@router/*": ["router/*"],
+      "@hooks/*": ["hooks/*"],
       "@styles/*": ["styles/*"]
     }
   },
