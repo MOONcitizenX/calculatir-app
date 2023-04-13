@@ -35,6 +35,8 @@ export class Calculator extends EventTarget {
     if (lastAction !== undefined) {
       if (isNumeric(lastAction) && lastAction !== '0') {
         this._expression[this._expression.length - 1] = lastAction + digit;
+      } else if (lastAction === '0') {
+        this._expression[this._expression.length - 1] = digit;
       } else {
         this._expression.push(digit);
       }
