@@ -6,11 +6,12 @@ export const KeypadWrapper = styled.div`
   margin-bottom: 30px;
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 `;
 
 interface KeypadButtonProps {
   $isSecondary?: boolean;
+  $isWide?: boolean;
 }
 
 export const StyledKeypadButton = styled.button<KeypadButtonProps>`
@@ -19,8 +20,9 @@ export const StyledKeypadButton = styled.button<KeypadButtonProps>`
   background-color: ${({ theme }) => theme.colors.background.primary};
   font-size: 24px;
   width: 100%;
-  max-width: 60px;
-  aspect-ratio: 1/1;
+  max-width: ${({ $isWide }) => ($isWide === true ? '100%' : '60px')};
+  grid-column: ${({ $isWide }) => ($isWide === true ? 'span 2' : 'auto')};
+  aspect-ratio: ${({ $isWide }) => ($isWide === true ? 'none' : '1/1')};
   border: none;
   border-radius: 16px;
   box-shadow: 3px 3px 12px ${({ theme }) => theme.colors.shadow.primary},

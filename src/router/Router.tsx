@@ -6,12 +6,13 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import ROUTES from '@constants/routes';
-import { HomePageFC } from '@pages/HomePage/HomePageFC/HomePageFC';
-import { SettingsPageFC } from '@pages/SettingsPage/SettingsPageFC/SettingsPageFC';
-import { HomePageCC } from '@pages/HomePage/HomePageCC/HomePageCC';
-import { SettingsPageCC } from '@pages/SettingsPage/SettingsPageCC/SettingsPageCC';
+
 import { NotFoundPage } from '@pages/NotFoundPage/NotFoundPage';
 import { RootLayout } from '@components/RootLayout/RootLayout';
+import { HomePageFC } from '@pages/HomePage/HomePageFC';
+import { SettingsPageFC } from '@pages/SettingsPage/SettingsPageFC';
+import { HomePageCC } from '@pages/HomePage/HomePageCC';
+import { SettingsPageCC } from '@pages/SettingsPage/SettingsPageCC';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

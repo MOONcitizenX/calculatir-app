@@ -1,11 +1,28 @@
+import { useCalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
 import { StyledDisplay, StyledExpression, StyledResult } from '@styles/components/Display.style';
+import { useEffect, useState } from 'react';
 
-interface DisplayFCProps {
-  expression: string;
-  result: string;
-}
+export const DisplayFC = () => {
+  const { calculator } = useCalculatorContext();
 
-export const DisplayFC = ({ expression, result }: DisplayFCProps) => {
+  const [expression, setExpression] = useState<string>('0');
+  const [result, setResult] = useState<string>('0');
+
+  useEffect(() => {
+    const updateOnChange = () => {
+      const expression = calculator.expression;
+      setExpression(expression.length > 0 ? expression : '0');
+      const result = calculator.result;
+      setResult(result.length > 0 ? result : '');
+    };
+
+    calculator.addEventListener('change', updateOnChange);
+
+    return () => {
+      calculator.removeEventListener('change', updateOnChange);
+    };
+  }, [calculator]);
+
   return (
     <StyledDisplay>
       <StyledExpression>{expression}</StyledExpression>
