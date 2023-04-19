@@ -1,6 +1,6 @@
 import { useCalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
 import { useActions } from '@hooks/useActions';
-import { StyledClearButton } from '@styles/components/Settings.style';
+import { StyledClearButton } from './ClearHistoryButton.style';
 
 export const ClearHistoryButtonFC = () => {
   const { calculator } = useCalculatorContext();

@@ -3,7 +3,7 @@ import { type AnyAction, type Dispatch } from 'redux';
 import { connect, type ConnectedProps } from 'react-redux';
 import { type RootState } from '@store/reducers';
 import { setLightTheme, setDarkTheme, setColoredTheme } from '@store/actions/themeActions';
-import { StyledLabel, StyledSwitch, SwitcherWrapper } from '@styles/components/Settings.style';
+import { StyledLabel, StyledSwitch, SwitcherWrapper } from './ThemeSwitcher.style';
 
 const mapState = (state: RootState) => ({
   currentTheme: state.theme.name,

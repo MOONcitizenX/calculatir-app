@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect, type ConnectedProps } from 'react-redux';
 import { type RootState } from '@store/reducers';
-import { HistoryWrapper, StyledHistoryList } from '@styles/components/History.style';
+import { HistoryWrapper, StyledHistoryList } from './History.style';
 
 const mapState = (state: RootState) => ({
   historyList: state.history.historyList,

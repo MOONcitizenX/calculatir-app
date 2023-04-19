@@ -1,5 +1,5 @@
 import { useTypedSelector } from '@hooks/useTypedSelector';
-import { HistoryWrapper, StyledHistoryList } from '@styles/components/History.style';
+import { HistoryWrapper, StyledHistoryList } from './History.style';
 
 interface HistoryFCProps {
   isHistoryOpen: boolean;

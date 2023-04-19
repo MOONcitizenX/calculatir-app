@@ -1,6 +1,6 @@
 import { useActions } from '@hooks/useActions';
 import { useTypedSelector } from '@hooks/useTypedSelector';
-import { StyledLabel, StyledSwitch, SwitcherWrapper } from '@styles/components/Settings.style';
+import { StyledLabel, StyledSwitch, SwitcherWrapper } from './ThemeSwitcher.style';
 
 export const ThemeSwitcherFC = () => {
   const currentTheme = useTypedSelector((state) => state.theme.name);

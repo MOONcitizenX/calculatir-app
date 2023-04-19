@@ -4,7 +4,7 @@ import { connect, type ConnectedProps } from 'react-redux';
 import { CalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
 import { changeDisplayExpression, changeDisplayResult } from '@store/actions/displayActions';
 import { clearHistory } from '@store/actions/historyActions';
-import { StyledClearButton } from '@styles/components/Settings.style';
+import { StyledClearButton } from './ClearHistoryButton.style';
 
 const mapState = () => ({});
 

@@ -1,6 +1,5 @@
 import { Component } from 'react';
-import { StyledControlPanel } from '@styles/components/ControlPanel.style';
-import { ToggleHistoryButton } from '@styles/components/History.style';
+import { StyledControlPanel, ToggleHistoryButton } from './ControlPanel.style';
 
 interface ControlPanelCCProps {
   toggleHistory: () => void;

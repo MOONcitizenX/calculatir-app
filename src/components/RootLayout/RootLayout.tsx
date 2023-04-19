@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from '@components/Header/Header';
-import { StyledContainer } from '@styles/components/shared/shared';
+import { StyledContainer } from '@styles/shared';
 
 export const RootLayout = () => {
   return (

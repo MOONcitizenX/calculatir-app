@@ -1,9 +1,9 @@
+import { Component } from 'react';
 import { ControlPanelCC } from '@components/ControlPanel/ControlPanelCC';
 import { DisplayCC } from '@components/Display/DisplayCC';
 import { HistoryCC } from '@components/History/HistoryCC';
 import { KeypadCC } from '@components/Keypad/KeypadCC';
-import { CalculatorWrapper, StyledCalculator } from '@styles/components/Calculator.style';
-import { Component } from 'react';
+import { CalculatorWrapper, StyledCalculator } from './Calculator.style';
 
 interface CalculatorCCState {
   isHistoryOpen: boolean;

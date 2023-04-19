@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ControlPanelFC } from '@components/ControlPanel/ControlPanelFC';
 import { DisplayFC } from '@components/Display/DisplayFC';
 import { KeypadFC } from '@components/Keypad/KeypadFC';
-import { CalculatorWrapper, StyledCalculator } from '@styles/components/Calculator.style';
+import { CalculatorWrapper, StyledCalculator } from '@components/Calculator/Calculator.style';
 import { HistoryFC } from '@components/History/HistoryFC';
 
 export const CalculatorFC = () => {

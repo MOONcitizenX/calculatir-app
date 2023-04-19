@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { KeypadWrapper, StyledKeypadButton } from '@styles/components/Keypad.style';
 import { ClearAllCommand } from '@utils/commands/ClearAllCommand';
 import { Operations } from '@constants/operators';
 import { BracketCommand } from '@utils/commands/BracketCommand';
@@ -10,6 +9,8 @@ import { DotCommand } from '@utils/commands/DotCommand';
 import { EqualsCommand } from '@utils/commands/EqualsCommand';
 import { OperatorCommand } from '@utils/commands/OperatorCommand';
 import { CalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
+import { StyledKeypadButton } from '@styles/shared';
+import { KeypadWrapper } from './Keypad.style';
 
 export class KeypadCC extends Component {
   static contextType = CalculatorContext;

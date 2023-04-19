@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { type AnyAction, type Dispatch } from 'redux';
 import { connect, type ConnectedProps } from 'react-redux';
-import { StyledDisplay, StyledExpression, StyledResult } from '@styles/components/Display.style';
 import { CalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
 import { type RootState } from '@store/reducers';
 import { changeDisplayExpression, changeDisplayResult } from '@store/actions/displayActions';
 import { changeEvent } from '@constants/calculatorEvent';
+import { StyledDisplay, StyledExpression, StyledResult } from './Display.style';
 
 const mapState = (state: RootState) => ({
   expression: state.display.expression,

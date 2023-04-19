@@ -1,6 +1,6 @@
 import ROUTES from '@constants/routes';
-import { StyledHeader, StyledNavLink, StyledNavList } from '@styles/components/Header.style';
-import { StyledContainer } from '@styles/components/shared/shared';
+import { StyledHeader, StyledNavLink, StyledNavList } from './Header.style';
+import { StyledContainer } from '@styles/shared';
 
 export const Header = () => {
   return (
