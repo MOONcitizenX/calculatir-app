@@ -116,7 +116,7 @@ export class Calculator extends EventTarget {
     let lastAction = this.getLastAction();
     if (lastAction !== undefined) {
       if (isNumeric(lastAction)) {
-        lastAction = String(-parseInt(lastAction));
+        lastAction = lastAction[0] === '-' ? lastAction.slice(1) : '-' + lastAction;
         this._expression[this._expression.length - 1] = lastAction;
         this.dispatchEvent(new CustomEvent('change'));
       }
