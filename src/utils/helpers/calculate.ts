@@ -1,4 +1,4 @@
-import { Brackets, type Operator } from '@constants/Operators';
+import { Brackets, type Operator } from '@constants/operators';
 import { isNumeric } from './isNumeric';
 import { mathOperations } from './mathematicalOperations';
 

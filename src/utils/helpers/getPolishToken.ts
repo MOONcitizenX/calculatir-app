@@ -1,6 +1,6 @@
-import { OperatorsPriority, Brackets } from '@constants/Operators';
+import { OperatorsPriority, Brackets } from '@constants/operators';
 import { isNumeric } from './isNumeric';
-import { type Operator } from '@constants/Operators';
+import { type Operator } from '@constants/operators';
 
 export const getPolishToken = (tokens: Array<string | Operator | Brackets>) => {
   const polishToken: Array<string | Operator> = [];

@@ -8,7 +8,7 @@ import { EqualsCommand } from '@utils/commands/EqualsCommand';
 import { ClearEntryCommand } from '@utils/commands/ClearEntryCommand';
 import { useCalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
 import { KeypadWrapper, StyledKeypadButton } from '@styles/components/Keypad.style';
-import { Operations } from '@constants/Operators';
+import { Operations } from '@constants/operators';
 
 export const KeypadFC = () => {
   const { calculator } = useCalculatorContext();

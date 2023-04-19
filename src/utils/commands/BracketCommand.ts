@@ -1,4 +1,4 @@
-import { type Brackets } from '@constants/Operators';
+import { type Brackets } from '@constants/operators';
 import { Command } from './Command';
 
 export class BracketCommand extends Command {

@@ -1,4 +1,4 @@
-import { type Brackets, type Operator } from '@constants/Operators';
+import { type Brackets, type Operator } from '@constants/operators';
 import { type Calculator } from '@utils/Calculator';
 
 export abstract class Command {

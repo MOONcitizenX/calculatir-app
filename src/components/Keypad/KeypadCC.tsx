@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { KeypadWrapper, StyledKeypadButton } from '@styles/components/Keypad.style';
 import { ClearAllCommand } from '@utils/commands/ClearAllCommand';
-import { Operations } from '@constants/Operators';
+import { Operations } from '@constants/operators';
 import { BracketCommand } from '@utils/commands/BracketCommand';
 import { ChangeSignCommand } from '@utils/commands/ChangeSignCommand';
 import { ClearEntryCommand } from '@utils/commands/ClearEntryCommand';

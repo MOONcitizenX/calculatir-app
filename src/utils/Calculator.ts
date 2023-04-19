@@ -1,5 +1,5 @@
 import { isNumeric } from './helpers/isNumeric';
-import { Brackets, OperatorsArray, type Operator, Operations } from '@constants/Operators';
+import { Brackets, OperatorsArray, type Operator, Operations } from '@constants/operators';
 import { calculate } from './helpers/calculate';
 import { getPolishToken } from './helpers/getPolishToken';
 import { changeEvent } from '@constants/calculatorEvent';

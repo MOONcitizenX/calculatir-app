@@ -1,5 +1,5 @@
 import { Command } from './Command';
-import { type Operators } from '@constants/Operators';
+import { type Operators } from '@constants/operators';
 
 export class OperatorCommand extends Command {
   execute() {
