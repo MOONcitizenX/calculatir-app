@@ -32,7 +32,7 @@ export class Calculator extends EventTarget {
   inputDigit(digit: string) {
     const lastAction = this.getLastAction();
     if (lastAction !== undefined) {
-      if (isNumeric(lastAction) && lastAction !== '0') {
+      if ((isNumeric(lastAction) && lastAction !== '0') || lastAction === Operations.DOT) {
         this._expression[this._expression.length - 1] = lastAction + digit;
       } else if (lastAction === '0') {
         this._expression[this._expression.length - 1] = digit;
@@ -49,10 +49,17 @@ export class Calculator extends EventTarget {
     let lastAction = this.getLastAction();
     if (lastAction !== undefined) {
       if (isNumeric(lastAction) && !lastAction.includes(Operations.DOT)) {
-        lastAction = lastAction + String(Operations.DOT);
+        lastAction = lastAction + Operations.DOT;
         this._expression[this._expression.length - 1] = lastAction;
         this.dispatchEvent(new CustomEvent('change'));
       }
+      if (!lastAction.includes(Operations.DOT)) {
+        this._expression.push(Operations.DOT);
+        this.dispatchEvent(new CustomEvent('change'));
+      }
+    } else {
+      this._expression.push(Operations.DOT);
+      this.dispatchEvent(new CustomEvent('change'));
     }
   }
 
