@@ -20,7 +20,6 @@ export class Calculator extends EventTarget {
   }
 
   get result() {
-    console.log(this.bracketsCount);
     if (this.bracketsCount === 0) {
       const { polishToken, isSolvable } = getPolishToken(this._expression);
       if (isSolvable) {
@@ -59,7 +58,6 @@ export class Calculator extends EventTarget {
 
   inputOperator(operator: Operator) {
     const lastAction = this.getLastAction();
-    console.log(lastAction);
     if (lastAction !== undefined) {
       if (isNumeric(lastAction) || lastAction === Brackets.closingBracket) {
         this._expression.push(operator);

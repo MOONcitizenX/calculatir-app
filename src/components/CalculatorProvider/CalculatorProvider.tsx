@@ -6,11 +6,11 @@ interface CalculatorProviderProps {
   children?: React.ReactNode;
 }
 
-interface Context {
+export interface Context {
   calculator: Calculator;
 }
 
-const CalculatorContext = createContext<Context | null>(null);
+export const CalculatorContext = createContext<Context | null>(null);
 
 export const useCalculatorContext = () => {
   const context = useContext(CalculatorContext);

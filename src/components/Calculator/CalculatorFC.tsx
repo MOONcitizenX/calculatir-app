@@ -15,7 +15,7 @@ export const CalculatorFC = () => {
   return (
     <CalculatorWrapper>
       <StyledCalculator>
-        <DisplayFC expression="12 + 3" result="15" />
+        <DisplayFC />
         <KeypadFC />
         <HistoryFC isHistoryOpen={isHistoryOpen} />
         <ControlPanelFC toggleHistory={toggleHistory} isHistoryOpen={isHistoryOpen} />

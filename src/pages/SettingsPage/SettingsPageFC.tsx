@@ -1,6 +1,6 @@
 import { ThemeSwitcherFC } from '@components/ThemeSwitcher/ThemeSwitcherFC';
+import { ClearHistoryButtonFC } from '@components/ClearHistoryButton/ClearHistoryButtonFC';
 import { CalculatorWrapper, StyledCalculator } from '@styles/components/Calculator.style';
-import { StyledClearButton } from '@styles/components/Settings.style';
 import { StyledTitle } from '@styles/components/shared/shared';
 
 export const SettingsPageFC = () => {
@@ -9,7 +9,7 @@ export const SettingsPageFC = () => {
       <StyledCalculator>
         <StyledTitle>Settings</StyledTitle>
         <ThemeSwitcherFC />
-        <StyledClearButton>Clear history</StyledClearButton>
+        <ClearHistoryButtonFC />
       </StyledCalculator>
     </CalculatorWrapper>
   );

@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import { ThemeSwitcherCC } from '@components/ThemeSwitcher/ThemeSwitcherCC';
 import { CalculatorWrapper, StyledCalculator } from '@styles/components/Calculator.style';
-import { StyledClearButton } from '@styles/components/Settings.style';
 import { StyledTitle } from '@styles/components/shared/shared';
+import { ClearHistoryButtonCC } from '@components/ClearHistoryButton/ClearHistoryButtonCC';
 
 export class SettingsPageCC extends Component {
   render() {
@@ -11,7 +11,7 @@ export class SettingsPageCC extends Component {
         <StyledCalculator>
           <StyledTitle>Settings</StyledTitle>
           <ThemeSwitcherCC />
-          <StyledClearButton>Clear history</StyledClearButton>
+          <ClearHistoryButtonCC />
         </StyledCalculator>
       </CalculatorWrapper>
     );

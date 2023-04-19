@@ -32,7 +32,7 @@ export const calculate = (polishToken: Array<string | Operator | Brackets>) => {
 
   if (numbers.length === 1) {
     if (Number(numbers[0]) === Infinity) {
-      return 'Error: division by zero';
+      return 'Error';
     }
     if (Number(numbers[0]) > 2 ** 53 - 1 || Number(numbers[0]) < -(2 ** 53 - 1)) {
       return 'Too big numbers';
