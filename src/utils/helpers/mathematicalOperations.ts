@@ -1,4 +1,4 @@
-import { type Operator } from './Operators';
+import { type Operator } from '@constants/Operators';
 
 const add = (x: number, y: number) => {
   const result = (Math.trunc(x * 1000) + Math.trunc(y * 1000)) / 1000;

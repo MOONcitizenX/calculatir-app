@@ -1,6 +1,6 @@
 import { Brackets, type Operator } from '@constants/Operators';
 import { isNumeric } from './isNumeric';
-import { mathOperations } from '@constants/MathOperations';
+import { mathOperations } from './mathematicalOperations';
 
 export const calculate = (polishToken: Array<string | Operator | Brackets>) => {
   const numbers: string[] = [];

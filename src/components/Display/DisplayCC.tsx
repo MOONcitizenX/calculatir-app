@@ -26,7 +26,7 @@ const connector = connect(mapState, mapDispatch);
 
 type DisplayProps = ConnectedProps<typeof connector>;
 
-export class Display extends Component<DisplayProps> {
+class Display extends Component<DisplayProps> {
   static contextType = CalculatorContext;
   declare context: React.ContextType<typeof CalculatorContext>;
 

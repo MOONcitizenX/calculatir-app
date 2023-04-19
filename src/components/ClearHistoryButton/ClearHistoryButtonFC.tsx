@@ -7,8 +7,8 @@ export const ClearHistoryButtonFC = () => {
   const { changeDisplayExpression, changeDisplayResult, clearHistory } = useActions();
 
   const resetAllHistory = () => {
-    clearHistory();
     calculator.clearAll();
+    clearHistory();
     changeDisplayExpression('0');
     changeDisplayResult('0');
   };
