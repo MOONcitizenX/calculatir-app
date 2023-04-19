@@ -5,6 +5,7 @@ import { StyledDisplay, StyledExpression, StyledResult } from '@styles/component
 import { CalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
 import { type RootState } from '@store/reducers';
 import { changeDisplayExpression, changeDisplayResult } from '@store/actions/displayActions';
+import { changeEvent } from '@constants/calculatorEvent';
 
 const mapState = (state: RootState) => ({
   expression: state.display.expression,
@@ -41,12 +42,12 @@ class Display extends Component<DisplayProps> {
 
   componentDidMount(): void {
     const { calculator } = this.context!;
-    calculator.addEventListener('change', this.updateOnChange);
+    calculator.addEventListener(changeEvent, this.updateOnChange);
   }
 
   componentWillUnmount(): void {
     const { calculator } = this.context!;
-    calculator.removeEventListener('change', this.updateOnChange);
+    calculator.removeEventListener(changeEvent, this.updateOnChange);
   }
 
   render() {

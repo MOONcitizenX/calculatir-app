@@ -1,4 +1,5 @@
 import { useCalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
+import { changeEvent } from '@constants/calculatorEvent';
 import { useActions } from '@hooks/useActions';
 import { useTypedSelector } from '@hooks/useTypedSelector';
 import { StyledDisplay, StyledExpression, StyledResult } from '@styles/components/Display.style';
@@ -20,10 +21,10 @@ export const DisplayFC = () => {
       changeDisplayResult(result.length > 0 ? result : '');
     };
 
-    calculator.addEventListener('change', updateOnChange);
+    calculator.addEventListener(changeEvent, updateOnChange);
 
     return () => {
-      calculator.removeEventListener('change', updateOnChange);
+      calculator.removeEventListener(changeEvent, updateOnChange);
     };
   }, [calculator, changeDisplayExpression, changeDisplayResult]);
 
