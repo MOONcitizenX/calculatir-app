@@ -76,5 +76,5 @@ export const StyledBurgerLine = styled.span`
   width: 100%;
   height: 2px;
   background-color: ${({ theme }) => theme.colors.text.primary};
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
 `;

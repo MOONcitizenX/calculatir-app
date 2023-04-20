@@ -7,7 +7,6 @@ interface HistoryWrapperProps {
 export const HistoryWrapper = styled.div<HistoryWrapperProps>`
   width: 100%;
   height: 100%;
-  max-height: 87%;
   position: absolute;
   top: 0;
   left: -100%;
@@ -31,4 +30,13 @@ export const StyledHistoryList = styled.ul`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+`;
+
+export const StyledHeading = styled.h3`
+  color: ${({ theme }) => theme.colors.text.primary};
+  font-size: 22px;
+`;
+
+export const StyledHistoryItem = styled.li`
+  color: ${({ theme }) => theme.colors.text.primary};
 `;

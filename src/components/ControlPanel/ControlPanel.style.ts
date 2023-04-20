@@ -13,4 +13,7 @@ export const ToggleHistoryButton = styled(StyledKeypadButton)`
   width: 40px;
   border-radius: 8px;
   text-align: center;
+
+  position: relative;
+  z-index: 2;
 `;

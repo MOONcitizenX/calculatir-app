@@ -30,6 +30,6 @@ export const StyledCalculator = styled.div`
   @media screen and (max-width: 480px) {
     border-radius: 0;
     box-shadow: none;
-    padding-top: 80px;
+    padding-top: 70px;
   }
 `;

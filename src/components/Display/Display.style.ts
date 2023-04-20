@@ -23,7 +23,7 @@ export const StyledExpression = styled.p`
 `;
 
 export const StyledResult = styled.p`
-  font-size: 30px;
+  font-size: 24px;
   min-height: 36px;
   font-weight: 900;
 `;
