@@ -39,7 +39,7 @@ export class Calculator extends EventTarget {
     const lastAction = this.getLastAction();
     if (lastAction !== undefined) {
       if ((isNumeric(lastAction) && lastAction !== '0') || lastAction === Operations.DOT) {
-        this._expression[this._expression.length - 1] = lastAction + digit;
+        this._expression[this._expression.length - 1] = `${lastAction}${digit}`;
       } else if (lastAction === '0') {
         this._expression[this._expression.length - 1] = digit;
       } else {
@@ -59,7 +59,7 @@ export class Calculator extends EventTarget {
     let lastAction = this.getLastAction();
     if (lastAction !== undefined) {
       if (isNumeric(lastAction) && !lastAction.includes(Operations.DOT)) {
-        lastAction = lastAction + Operations.DOT;
+        lastAction = `${lastAction}${Operations.DOT}`;
         this._expression[this._expression.length - 1] = lastAction;
         this.dispatchEvent(new CustomEvent(changeEvent));
       }
@@ -145,7 +145,7 @@ export class Calculator extends EventTarget {
         lastAction =
           lastAction[0] === Operations.SUBTRACT
             ? lastAction.slice(1)
-            : Operations.SUBTRACT + lastAction;
+            : `${Operations.SUBTRACT}${lastAction}`;
         this._expression[this._expression.length - 1] = lastAction;
         this.dispatchEvent(new CustomEvent(changeEvent));
       }
