@@ -1,4 +1,4 @@
-import { createRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ControlPanelFC } from '@components/ControlPanel/ControlPanelFC';
 import { DisplayFC } from '@components/Display/DisplayFC';
 import { KeypadFC } from '@components/Keypad/KeypadFC';
