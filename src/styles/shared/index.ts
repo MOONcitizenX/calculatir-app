@@ -5,6 +5,9 @@ export const StyledContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  @media screen and (max-width: 480px) {
+    padding: 0;
+  }
 `;
 
 export const StyledMain = styled.main`
@@ -44,5 +47,10 @@ export const StyledKeypadButton = styled.button<KeypadButtonProps>`
   }
   &:focus-visible {
     outline: 1px solid ${({ theme }) => theme.colors.text.secondary};
+  }
+
+  @media screen and (max-width: 420px) {
+    border-radius: 12px;
+    font-size: 22px;
   }
 `;
