@@ -1,6 +1,7 @@
 import { Brackets, type Operator } from '@constants/operators';
 import { isNumeric } from './isNumeric';
 import { mathOperations } from './mathematicalOperations';
+import { CalculatorErrors } from '@constants/calculatorErrors';
 
 export const calculate = (polishToken: Array<string | Operator | Brackets>) => {
   const numbers: string[] = [];
@@ -32,10 +33,13 @@ export const calculate = (polishToken: Array<string | Operator | Brackets>) => {
 
   if (numbers.length === 1) {
     if (Number(numbers[0]) === Infinity) {
-      return 'Error';
+      return CalculatorErrors.ERROR;
     }
     if (Number(numbers[0]) > 2 ** 53 - 1 || Number(numbers[0]) < -(2 ** 53 - 1)) {
-      return 'Too big numbers';
+      return CalculatorErrors.TOO_BIG;
+    }
+    if (numbers[0].length > 20) {
+      return CalculatorErrors.TOO_BIG;
     }
     return numbers[0];
   }
