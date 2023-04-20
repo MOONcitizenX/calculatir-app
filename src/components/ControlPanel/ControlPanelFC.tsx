@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import { StyledControlPanel, ToggleHistoryButton } from './ControlPanel.style';
 
 interface ControlPanelFCProps {
@@ -5,11 +6,15 @@ interface ControlPanelFCProps {
   isHistoryOpen: boolean;
 }
 
-export const ControlPanelFC = ({ toggleHistory, isHistoryOpen }: ControlPanelFCProps) => {
-  return (
-    <StyledControlPanel>
-      <p>Toggle history</p>
-      <ToggleHistoryButton onClick={toggleHistory}>{isHistoryOpen ? '<' : '>'}</ToggleHistoryButton>
-    </StyledControlPanel>
-  );
-};
+export const ControlPanelFC = forwardRef<HTMLDivElement, ControlPanelFCProps>(
+  ({ toggleHistory, isHistoryOpen }: ControlPanelFCProps, ref) => {
+    return (
+      <StyledControlPanel ref={ref}>
+        <p>Toggle history</p>
+        <ToggleHistoryButton onClick={toggleHistory}>
+          {isHistoryOpen ? '<' : '>'}
+        </ToggleHistoryButton>
+      </StyledControlPanel>
+    );
+  }
+);

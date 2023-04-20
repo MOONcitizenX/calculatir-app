@@ -1,5 +1,5 @@
+import { StyledNavLink } from '@components/NavMenu/NavMenu.style';
 import ROUTES from '@constants/routes';
-import { StyledNavLink } from '@components/Header/Header.style';
 
 export const ErrorFallback = () => {
   return (

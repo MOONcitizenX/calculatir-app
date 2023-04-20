@@ -6,6 +6,10 @@ export const CalculatorWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 480px) {
+    max-width: 100%;
+    min-height: 100vh;
+  }
 `;
 
 export const StyledCalculator = styled.div`
@@ -23,4 +27,9 @@ export const StyledCalculator = styled.div`
     -1px -1px 16px ${({ theme }) => theme.colors.shadow.secondary};
   background-color: ${({ theme }) => theme.colors.background.primary};
   overflow: hidden;
+  @media screen and (max-width: 480px) {
+    border-radius: 0;
+    box-shadow: none;
+    padding-top: 70px;
+  }
 `;

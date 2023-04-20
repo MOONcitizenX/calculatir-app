@@ -1,8 +1,9 @@
 import { isNumeric } from './helpers/isNumeric';
-import { Brackets, OperatorsArray, type Operator, Operations } from '@constants/operators';
 import { calculate } from './helpers/calculate';
 import { getPolishToken } from './helpers/getPolishToken';
 import { changeEvent } from '@constants/calculatorEvent';
+import { CalculatorErrors } from '@constants/calculatorErrors';
+import { Brackets, Operations, type Operator, OperatorsArray } from '@constants/operators';
 
 export class Calculator extends EventTarget {
   _expression: string[];
@@ -31,6 +32,10 @@ export class Calculator extends EventTarget {
   }
 
   inputDigit(digit: string) {
+    if (this.hasError() || this.isTooLong()) {
+      return;
+    }
+
     const lastAction = this.getLastAction();
     if (lastAction !== undefined) {
       if ((isNumeric(lastAction) && lastAction !== '0') || lastAction === Operations.DOT) {
@@ -47,6 +52,10 @@ export class Calculator extends EventTarget {
   }
 
   inputDot() {
+    if (this.hasError() || this.isTooLong()) {
+      return;
+    }
+
     let lastAction = this.getLastAction();
     if (lastAction !== undefined) {
       if (isNumeric(lastAction) && !lastAction.includes(Operations.DOT)) {
@@ -65,6 +74,10 @@ export class Calculator extends EventTarget {
   }
 
   inputOperator(operator: Operator) {
+    if (this.hasError()) {
+      return;
+    }
+
     const lastAction = this.getLastAction();
     if (lastAction !== undefined) {
       if (isNumeric(lastAction) || lastAction === Brackets.closingBracket) {
@@ -80,6 +93,10 @@ export class Calculator extends EventTarget {
   }
 
   inputBracket(bracket: Brackets) {
+    if (this.hasError()) {
+      return;
+    }
+
     const lastAction = this.getLastAction();
     const canInputOpeningBracket =
       (lastAction === undefined || OperatorsArray.includes(lastAction as Operator)) &&
@@ -104,6 +121,10 @@ export class Calculator extends EventTarget {
   }
 
   inputEquals() {
+    if (this.hasError()) {
+      return;
+    }
+
     const result = this.result;
     if (result !== '' && this._expression.length > 1) {
       this.addToHistory(`${this.expression} = ${result}`);
@@ -114,6 +135,10 @@ export class Calculator extends EventTarget {
   }
 
   changeSign() {
+    if (this.hasError()) {
+      return;
+    }
+
     let lastAction = this.getLastAction();
     if (lastAction !== undefined) {
       if (isNumeric(lastAction)) {
@@ -158,5 +183,20 @@ export class Calculator extends EventTarget {
     if (this._expression.length > 0) {
       return this._expression[this._expression.length - 1];
     }
+  }
+
+  hasError() {
+    if (this.result === CalculatorErrors.ERROR || this.result === CalculatorErrors.TOO_BIG) {
+      return true;
+    }
+    return false;
+  }
+
+  isTooLong() {
+    const lastAction = this.getLastAction();
+    if (lastAction !== undefined && lastAction.length > 20) {
+      return true;
+    }
+    return false;
   }
 }

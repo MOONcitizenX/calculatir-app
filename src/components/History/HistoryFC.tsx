@@ -1,5 +1,10 @@
 import { useTypedSelector } from '@hooks/useTypedSelector';
-import { HistoryWrapper, StyledHistoryList } from './History.style';
+import {
+  HistoryWrapper,
+  StyledHeading,
+  StyledHistoryItem,
+  StyledHistoryList,
+} from './History.style';
 
 interface HistoryFCProps {
   isHistoryOpen: boolean;
@@ -11,10 +16,10 @@ export const HistoryFC = ({ isHistoryOpen }: HistoryFCProps) => {
   return (
     <>
       <HistoryWrapper $isOpen={isHistoryOpen}>
-        <h3>History</h3>
+        <StyledHeading>History</StyledHeading>
         <StyledHistoryList>
           {historyList.map((item, index) => (
-            <li key={index}>{item}</li>
+            <StyledHistoryItem key={index}>{item}</StyledHistoryItem>
           ))}
         </StyledHistoryList>
       </HistoryWrapper>
