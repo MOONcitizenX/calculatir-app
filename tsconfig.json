@@ -30,6 +30,6 @@
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "*.style.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
