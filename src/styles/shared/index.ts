@@ -1,16 +1,24 @@
 import styled from 'styled-components';
 
-export const KeypadWrapper = styled.div`
+export const StyledContainer = styled.div`
   width: 100%;
-  max-width: 600px;
-  margin-bottom: 30px;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+export const StyledMain = styled.main`
+  background-color: #6b8fc1;
+`;
+
+export const StyledTitle = styled.h3`
+  color: ${({ theme }) => theme.colors.text.primary};
+  margin-bottom: 20px;
 `;
 
 interface KeypadButtonProps {
   $isSecondary?: boolean;
+  $isWide?: boolean;
 }
 
 export const StyledKeypadButton = styled.button<KeypadButtonProps>`
@@ -19,8 +27,9 @@ export const StyledKeypadButton = styled.button<KeypadButtonProps>`
   background-color: ${({ theme }) => theme.colors.background.primary};
   font-size: 24px;
   width: 100%;
-  max-width: 60px;
-  aspect-ratio: 1/1;
+  max-width: ${({ $isWide }) => ($isWide === true ? '100%' : '60px')};
+  grid-column: ${({ $isWide }) => ($isWide === true ? 'span 2' : 'auto')};
+  aspect-ratio: ${({ $isWide }) => ($isWide === true ? 'none' : '1/1')};
   border: none;
   border-radius: 16px;
   box-shadow: 3px 3px 12px ${({ theme }) => theme.colors.shadow.primary},

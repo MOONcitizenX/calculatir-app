@@ -18,12 +18,12 @@ export const StyledDisplay = styled.div`
   user-select: none;
 `;
 
-export const StyledExpression = styled.span`
+export const StyledExpression = styled.p`
   font-size: 22px;
-  max-width: 256px;
 `;
 
-export const StyledResult = styled.span`
+export const StyledResult = styled.p`
   font-size: 30px;
+  min-height: 36px;
   font-weight: 900;
 `;

@@ -1,7 +1,20 @@
 import { Component } from 'react';
+import { StyledControlPanel, ToggleHistoryButton } from './ControlPanel.style';
 
-export class ControlPanelCC extends Component {
+interface ControlPanelCCProps {
+  toggleHistory: () => void;
+  isHistoryOpen: boolean;
+}
+export class ControlPanelCC extends Component<ControlPanelCCProps> {
   render() {
-    return <div>ControlPanelCC</div>;
+    const { toggleHistory, isHistoryOpen } = this.props;
+    return (
+      <StyledControlPanel>
+        <p>Toggle history</p>
+        <ToggleHistoryButton onClick={toggleHistory}>
+          {isHistoryOpen ? '<' : '>'}
+        </ToggleHistoryButton>
+      </StyledControlPanel>
+    );
   }
 }

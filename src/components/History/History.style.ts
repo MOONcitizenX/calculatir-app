@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { StyledKeypadButton } from './Keypad.style';
 
 interface HistoryWrapperProps {
   $isOpen: boolean;
@@ -32,10 +31,4 @@ export const StyledHistoryList = styled.ul`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-`;
-
-export const ToggleHistoryButton = styled(StyledKeypadButton)`
-  width: 40px;
-  border-radius: 8px;
-  text-align: center;
 `;
