@@ -19,6 +19,9 @@ export const HistoryWrapper = styled.div<HistoryWrapperProps>`
   transition: all 0.5s ease-in-out;
   transform: ${({ $isOpen }) => ($isOpen ? 'translate(100%)' : 'translate(0%)')};
   overflow: hidden;
+  @media screen and (max-width: 480px) {
+    border-radius: 0;
+  }
 `;
 
 export const StyledHistoryList = styled.ul`
