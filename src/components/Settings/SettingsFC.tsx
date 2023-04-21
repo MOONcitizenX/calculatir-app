@@ -6,7 +6,7 @@ import { CalculatorWrapper, StyledCalculator } from '@components/Calculator/Calc
 export const SettingsFC = () => {
   return (
     <CalculatorWrapper>
-      <StyledCalculator>
+      <StyledCalculator data-testid="calculator">
         <StyledTitle>Settings</StyledTitle>
         <ThemeSwitcherFC />
         <ClearHistoryButtonFC />

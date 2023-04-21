@@ -8,7 +8,7 @@ export class SettingsCC extends Component {
   render() {
     return (
       <CalculatorWrapper>
-        <StyledCalculator>
+        <StyledCalculator data-testid="calculator">
           <StyledTitle>Settings</StyledTitle>
           <ThemeSwitcherCC />
           <ClearHistoryButtonCC />
