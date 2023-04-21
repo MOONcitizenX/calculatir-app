@@ -34,6 +34,7 @@ class ThemeSwitcher extends Component<ThemeSwitcherProps> {
       <SwitcherWrapper>
         <StyledLabel>
           <input
+            data-testid="light-theme-switch"
             type="radio"
             name="theme"
             onChange={setLightTheme}
@@ -44,6 +45,7 @@ class ThemeSwitcher extends Component<ThemeSwitcherProps> {
 
         <StyledLabel>
           <input
+            data-testid="dark-theme-switch"
             type="radio"
             name="theme"
             onChange={setDarkTheme}
@@ -54,6 +56,7 @@ class ThemeSwitcher extends Component<ThemeSwitcherProps> {
 
         <StyledLabel>
           <input
+            data-testid="colored-theme-switch"
             type="radio"
             name="theme"
             onChange={setColoredTheme}

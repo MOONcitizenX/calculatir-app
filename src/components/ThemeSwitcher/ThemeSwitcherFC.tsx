@@ -10,6 +10,7 @@ export const ThemeSwitcherFC = () => {
     <SwitcherWrapper>
       <StyledLabel>
         <input
+          data-testid="light-theme-switch"
           type="radio"
           name="theme"
           onChange={setLightTheme}
@@ -20,6 +21,7 @@ export const ThemeSwitcherFC = () => {
 
       <StyledLabel>
         <input
+          data-testid="dark-theme-switch"
           type="radio"
           name="theme"
           onChange={setDarkTheme}
@@ -30,6 +32,7 @@ export const ThemeSwitcherFC = () => {
 
       <StyledLabel>
         <input
+          data-testid="colored-theme-switch"
           type="radio"
           name="theme"
           onChange={setColoredTheme}
