@@ -43,22 +43,22 @@ export const NavMenu = () => {
       </StyledBurgerButton>
       <StyledNavList $isMenuOpen={isMenuOpen}>
         <li>
-          <StyledNavLink to={ROUTES.root} onClick={closeMenu}>
+          <StyledNavLink to={ROUTES.root} onClick={closeMenu} data-testid="home-fc">
             HomeFC
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={ROUTES.homeCC} onClick={closeMenu}>
+          <StyledNavLink to={ROUTES.homeCC} onClick={closeMenu} data-testid="home-cc">
             HomeCC
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={ROUTES.settingsFC} onClick={closeMenu}>
+          <StyledNavLink to={ROUTES.settingsFC} onClick={closeMenu} data-testid="settings-fc">
             SettingsFC
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={ROUTES.settingsCC} onClick={closeMenu}>
+          <StyledNavLink to={ROUTES.settingsCC} onClick={closeMenu} data-testid="settings-cc">
             SettingsCC
           </StyledNavLink>
         </li>
