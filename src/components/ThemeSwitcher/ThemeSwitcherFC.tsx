@@ -1,10 +1,10 @@
-import { useActions } from '@hooks/useActions';
+import { useTypedActions } from '@hooks/useTypedActions';
 import { useTypedSelector } from '@hooks/useTypedSelector';
 import { StyledLabel, StyledSwitch, SwitcherWrapper } from './ThemeSwitcher.style';
 
 export const ThemeSwitcherFC = () => {
   const currentTheme = useTypedSelector((state) => state.theme.name);
-  const { setLightTheme, setDarkTheme, setColoredTheme } = useActions();
+  const { setLightTheme, setDarkTheme, setColoredTheme } = useTypedActions();
 
   return (
     <SwitcherWrapper>

@@ -1,5 +1,5 @@
-export const isNumeric = (char: string) => {
+export const isNumeric = (entry: string) => {
   const notNumeric = ['', ' '];
-  if (notNumeric.includes(char)) return false;
-  return !isNaN(Number(char));
+  if (notNumeric.includes(entry)) return false;
+  return !isNaN(Number(entry));
 };

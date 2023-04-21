@@ -1,5 +1,4 @@
-import { StyledNavLink } from '@components/NavMenu/NavMenu.style';
-import ROUTES from '@constants/routes';
+import Routes from '@constants/routes';
 
 export const ErrorFallback = () => {
   return (
@@ -15,7 +14,7 @@ export const ErrorFallback = () => {
       }}
     >
       <p style={{ color: 'red', fontSize: '24px' }}>Oops, Something went wrong...</p>
-      <StyledNavLink to={ROUTES.root}>Try navigating back to Home Page</StyledNavLink>
+      <a href={Routes.ROOT}>Try navigating back to Home Page</a>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import ROUTES from '@constants/routes';
+import Routes from '@constants/routes';
 import {
   StyledBurgerButton,
   StyledBurgerLine,
@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 export const NavMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const handleMenuClick = () => {
+  const handleBurgerButtonClick = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
@@ -36,29 +36,29 @@ export const NavMenu = () => {
 
   return (
     <StyledNav>
-      <StyledBurgerButton $isMenuOpen={isMenuOpen} onClick={handleMenuClick}>
+      <StyledBurgerButton $isMenuOpen={isMenuOpen} onClick={handleBurgerButtonClick}>
         <StyledBurgerLine />
         <StyledBurgerLine />
         <StyledBurgerLine />
       </StyledBurgerButton>
       <StyledNavList $isMenuOpen={isMenuOpen}>
         <li>
-          <StyledNavLink to={ROUTES.root} onClick={closeMenu} data-testid="home-fc">
+          <StyledNavLink to={Routes.ROOT} onClick={closeMenu} data-testid="home-fc">
             HomeFC
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={ROUTES.homeCC} onClick={closeMenu} data-testid="home-cc">
+          <StyledNavLink to={Routes.HOME_CC} onClick={closeMenu} data-testid="home-cc">
             HomeCC
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={ROUTES.settingsFC} onClick={closeMenu} data-testid="settings-fc">
+          <StyledNavLink to={Routes.SETTINGS_FC} onClick={closeMenu} data-testid="settings-fc">
             SettingsFC
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to={ROUTES.settingsCC} onClick={closeMenu} data-testid="settings-cc">
+          <StyledNavLink to={Routes.SETTINGS_CC} onClick={closeMenu} data-testid="settings-cc">
             SettingsCC
           </StyledNavLink>
         </li>

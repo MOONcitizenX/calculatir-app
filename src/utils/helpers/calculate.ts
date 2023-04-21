@@ -1,7 +1,7 @@
 import { Brackets, type Operator } from '@constants/operators';
 import { isNumeric } from './isNumeric';
 import { mathOperations } from './mathematicalOperations';
-import { CalculatorErrors } from '@constants/calculatorErrors';
+import { CalculatorErrors, maxEntryLength } from '@constants/calculatorErrors';
 
 export const calculate = (polishToken: Array<string | Operator | Brackets>) => {
   const numbers: string[] = [];
@@ -18,8 +18,8 @@ export const calculate = (polishToken: Array<string | Operator | Brackets>) => {
           let intermediateResult;
           if (
             operation !== undefined &&
-            operation !== Brackets.openingBracket &&
-            operation !== Brackets.closingBracket
+            operation !== Brackets.OPEN_BRACKET &&
+            operation !== Brackets.CLOSE_BRACKET
           ) {
             intermediateResult = mathOperations[operation](lastOperands[0], lastOperands[1]);
             numbers.push(intermediateResult);
@@ -38,7 +38,7 @@ export const calculate = (polishToken: Array<string | Operator | Brackets>) => {
     if (Number(numbers[0]) > 2 ** 53 - 1 || Number(numbers[0]) < -(2 ** 53 - 1)) {
       return CalculatorErrors.TOO_BIG;
     }
-    if (numbers[0].length > 20) {
+    if (numbers[0].length > maxEntryLength) {
       return CalculatorErrors.TOO_BIG;
     }
     return numbers[0];

@@ -1,28 +1,21 @@
 import { isNumeric } from './helpers/isNumeric';
 import { calculate } from './helpers/calculate';
 import { getPolishToken } from './helpers/getPolishToken';
-import { changeEvent } from '@constants/calculatorEvent';
-import { CalculatorErrors } from '@constants/calculatorErrors';
+import { changeEvent, equalsEvent } from '@constants/calculatorEvent';
+import { CalculatorErrors, maxEntryLength } from '@constants/calculatorErrors';
 import { Brackets, Operations, type Operator, OperatorsArray } from '@constants/operators';
 
 export class Calculator extends EventTarget {
-  _expression: string[];
-  bracketsCount: number;
-  addToHistory: (val: string) => void;
-
-  constructor(addToHistory: (val: string) => void) {
-    super();
-    this._expression = [];
-    this.bracketsCount = 0;
-    this.addToHistory = addToHistory;
-  }
+  private _expression: string[] = [];
+  private openBracketsCount = 0;
 
   get expression() {
-    return this._expression.join(' ');
+    const expression = this._expression.join(' ');
+    return expression.length > 0 ? expression : '0';
   }
 
-  get result() {
-    if (this.bracketsCount === 0) {
+  calculateResult() {
+    if (this.openBracketsCount === 0) {
       const { polishToken, isSolvable } = getPolishToken(this._expression);
       if (isSolvable) {
         return calculate(polishToken);
@@ -80,7 +73,7 @@ export class Calculator extends EventTarget {
 
     const lastAction = this.getLastAction();
     if (lastAction !== undefined) {
-      if (isNumeric(lastAction) || lastAction === Brackets.closingBracket) {
+      if (isNumeric(lastAction) || lastAction === Brackets.CLOSE_BRACKET) {
         this._expression.push(operator);
         this.dispatchEvent(new CustomEvent(changeEvent));
         return;
@@ -100,22 +93,22 @@ export class Calculator extends EventTarget {
     const lastAction = this.getLastAction();
     const canInputOpeningBracket =
       (lastAction === undefined || OperatorsArray.includes(lastAction as Operator)) &&
-      bracket === Brackets.openingBracket;
+      bracket === Brackets.OPEN_BRACKET;
     if (canInputOpeningBracket) {
       this._expression.push(bracket);
-      this.bracketsCount += 1;
+      this.openBracketsCount += 1;
       this.dispatchEvent(new CustomEvent(changeEvent));
       return;
     }
     const canInputClosingBracket =
       lastAction !== undefined &&
-      lastAction !== Brackets.openingBracket &&
+      lastAction !== Brackets.OPEN_BRACKET &&
       !OperatorsArray.includes(lastAction as Operator) &&
-      this.bracketsCount > 0 &&
-      bracket === Brackets.closingBracket;
+      this.openBracketsCount > 0 &&
+      bracket === Brackets.CLOSE_BRACKET;
     if (canInputClosingBracket) {
       this._expression.push(bracket);
-      this.bracketsCount -= 1;
+      this.openBracketsCount -= 1;
       this.dispatchEvent(new CustomEvent(changeEvent));
     }
   }
@@ -125,12 +118,19 @@ export class Calculator extends EventTarget {
       return;
     }
 
-    const result = this.result;
+    const result = this.calculateResult();
     if (result !== '' && this._expression.length > 1) {
-      this.addToHistory(`${this.expression} = ${result}`);
       this.dispatchEvent(new CustomEvent(changeEvent));
+      this.dispatchEvent(
+        new CustomEvent(equalsEvent, {
+          detail: {
+            expression: this.expression,
+            result,
+          },
+        })
+      );
       this._expression = [result];
-      this.bracketsCount = 0;
+      this.openBracketsCount = 0;
     }
   }
 
@@ -163,11 +163,11 @@ export class Calculator extends EventTarget {
   clearEntry() {
     if (this._expression.length > 0) {
       const lastAction = this._expression.pop();
-      if (lastAction === Brackets.openingBracket) {
-        this.bracketsCount -= 1;
+      if (lastAction === Brackets.OPEN_BRACKET) {
+        this.openBracketsCount -= 1;
       }
-      if (lastAction === Brackets.closingBracket) {
-        this.bracketsCount += 1;
+      if (lastAction === Brackets.CLOSE_BRACKET) {
+        this.openBracketsCount += 1;
       }
       this.dispatchEvent(new CustomEvent(changeEvent));
     }
@@ -175,26 +175,27 @@ export class Calculator extends EventTarget {
 
   clearAll() {
     this._expression = [];
-    this.bracketsCount = 0;
+    this.openBracketsCount = 0;
     this.dispatchEvent(new CustomEvent(changeEvent));
   }
 
-  getLastAction() {
+  private getLastAction() {
     if (this._expression.length > 0) {
       return this._expression[this._expression.length - 1];
     }
   }
 
-  hasError() {
-    if (this.result === CalculatorErrors.ERROR || this.result === CalculatorErrors.TOO_BIG) {
+  private hasError() {
+    const result = this.calculateResult();
+    if (result === CalculatorErrors.ERROR || result === CalculatorErrors.TOO_BIG) {
       return true;
     }
     return false;
   }
 
-  isTooLong() {
+  private isTooLong() {
     const lastAction = this.getLastAction();
-    if (lastAction !== undefined && lastAction.length > 20) {
+    if (lastAction !== undefined && lastAction.length > maxEntryLength) {
       return true;
     }
     return false;
