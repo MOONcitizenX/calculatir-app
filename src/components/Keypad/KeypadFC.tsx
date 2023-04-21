@@ -1,12 +1,14 @@
-import { ClearAllCommand } from '@utils/commands/ClearAllCommand';
-import { ChangeSignCommand } from '@utils/commands/ChangeSignCommand';
-import { OperatorCommand } from '@utils/commands/OperatorCommand';
-import { DigitCommand } from '@utils/commands/DigitCommand';
-import { BracketCommand } from '@utils/commands/BracketCommand';
-import { DotCommand } from '@utils/commands/DotCommand';
-import { EqualsCommand } from '@utils/commands/EqualsCommand';
-import { ClearEntryCommand } from '@utils/commands/ClearEntryCommand';
-import { useCalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
+import {
+  ClearAllCommand,
+  BracketCommand,
+  ChangeSignCommand,
+  ClearEntryCommand,
+  DigitCommand,
+  DotCommand,
+  EqualsCommand,
+  OperatorCommand,
+} from '@utils/commands';
+import { useCalculatorContext } from '@components/CalculatorProvider';
 import { Operations } from '@constants/operators';
 import { StyledKeypadButton } from '@styles/shared';
 import { KeypadWrapper } from './Keypad.style';

@@ -4,7 +4,7 @@ export enum DisplayActionTypes {
 }
 
 export interface DisplayAction {
-  type: 'CHANGE_EXPRESSION' | 'CHANGE_RESULT';
+  type: DisplayActionTypes;
   payload: string;
 }
 

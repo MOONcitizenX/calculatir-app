@@ -1,4 +1,4 @@
-import { SettingsFC } from '@components/Settings/SettingsFC';
+import { SettingsFC } from '@components/Settings';
 
 export const SettingsPageFC = () => {
   return <SettingsFC />;

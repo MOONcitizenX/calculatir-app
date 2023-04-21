@@ -1,5 +1,5 @@
+import { CalculatorCC } from '@components/Calculator';
 import { Component } from 'react';
-import { CalculatorCC } from '@components/Calculator/CalculatorCC';
 
 export class HomePageCC extends Component {
   render() {

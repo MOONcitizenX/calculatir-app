@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { type AnyAction, type Dispatch } from 'redux';
 import { connect, type ConnectedProps } from 'react-redux';
-import { CalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
+import { CalculatorContext } from '@components/CalculatorProvider';
 import { type RootState } from '@store/reducers';
 import { changeDisplayExpression, changeDisplayResult } from '@store/actions/displayActions';
 import { changeEvent } from '@constants/calculatorEvent';
 import { StyledDisplay, StyledExpression, StyledResult } from './Display.style';
+import { type Calculator } from '@utils/Calculator';
 
 const mapState = (state: RootState) => ({
   expression: state.display.expression,
@@ -30,19 +31,32 @@ type DisplayProps = ConnectedProps<typeof connector>;
 class Display extends Component<DisplayProps> {
   static contextType = CalculatorContext;
   declare context: React.ContextType<typeof CalculatorContext>;
+  private oldCalculator: Calculator;
+
+  constructor(props: DisplayProps) {
+    super(props);
+    this.oldCalculator = this.context!.calculator;
+  }
 
   updateOnChange = () => {
     const { calculator } = this.context!;
     const { changeDisplayExpression, changeDisplayResult } = this.props;
-    const expression = calculator.expression;
-    changeDisplayExpression(expression.length > 0 ? expression : '0');
-    const result = calculator.result;
-    changeDisplayResult(result.length > 0 ? result : '');
+    changeDisplayExpression(calculator.expression);
+    changeDisplayResult(calculator.calculateResult());
   };
 
   componentDidMount(): void {
     const { calculator } = this.context!;
     calculator.addEventListener(changeEvent, this.updateOnChange);
+  }
+
+  componentDidUpdate(): void {
+    const { calculator } = this.context!;
+    if (calculator !== this.oldCalculator) {
+      this.oldCalculator.removeEventListener(changeEvent, this.updateOnChange);
+      calculator.addEventListener(changeEvent, this.updateOnChange);
+      this.oldCalculator = calculator;
+    }
   }
 
   componentWillUnmount(): void {

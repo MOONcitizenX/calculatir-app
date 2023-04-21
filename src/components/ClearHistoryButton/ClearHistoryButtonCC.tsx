@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { type Dispatch, type AnyAction } from 'redux';
 import { connect, type ConnectedProps } from 'react-redux';
-import { CalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
+import { CalculatorContext } from '@components/CalculatorProvider';
 import { changeDisplayExpression, changeDisplayResult } from '@store/actions/displayActions';
 import { clearHistory } from '@store/actions/historyActions';
 import { StyledClearButton } from './ClearHistoryButton.style';
-
-const mapState = () => ({});
 
 const mapDispatch = (dispatch: Dispatch<AnyAction>) => {
   return {
@@ -22,7 +20,7 @@ const mapDispatch = (dispatch: Dispatch<AnyAction>) => {
   };
 };
 
-const connector = connect(mapState, mapDispatch);
+const connector = connect(null, mapDispatch);
 
 type ClearHistoryButtonProps = ConnectedProps<typeof connector>;
 

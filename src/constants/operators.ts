@@ -11,8 +11,8 @@ export const OperatorsPriority: Record<Operator, number> = {
 };
 
 export enum Brackets {
-  openingBracket = '(',
-  closingBracket = ')',
+  OPEN_BRACKET = '(',
+  CLOSE_BRACKET = ')',
 }
 
 export enum Operations {

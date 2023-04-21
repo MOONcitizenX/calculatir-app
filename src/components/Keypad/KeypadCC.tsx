@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import { ClearAllCommand } from '@utils/commands/ClearAllCommand';
 import { Operations } from '@constants/operators';
-import { BracketCommand } from '@utils/commands/BracketCommand';
-import { ChangeSignCommand } from '@utils/commands/ChangeSignCommand';
-import { ClearEntryCommand } from '@utils/commands/ClearEntryCommand';
-import { DigitCommand } from '@utils/commands/DigitCommand';
-import { DotCommand } from '@utils/commands/DotCommand';
-import { EqualsCommand } from '@utils/commands/EqualsCommand';
-import { OperatorCommand } from '@utils/commands/OperatorCommand';
-import { CalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
+import {
+  ClearAllCommand,
+  BracketCommand,
+  ChangeSignCommand,
+  ClearEntryCommand,
+  DigitCommand,
+  DotCommand,
+  EqualsCommand,
+  OperatorCommand,
+} from '@utils/commands';
+import { CalculatorContext } from '@components/CalculatorProvider';
 import { StyledKeypadButton } from '@styles/shared';
 import { KeypadWrapper } from './Keypad.style';
 

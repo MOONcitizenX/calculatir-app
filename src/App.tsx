@@ -1,21 +1,24 @@
 import { Provider } from 'react-redux';
-import { Theme } from '@styles/Theme';
+import { ThemeProvider } from '@styles/ThemeProvider';
 import { Router } from '@router/Router';
 import { store } from './store';
 import GlobalStyles from '@styles/Global.styles';
-import { CalculatorProvider } from '@components/CalculatorProvider/CalculatorProvider';
+import { CalculatorProvider } from '@components/CalculatorProvider';
 import { ErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
+import { Calculator } from '@utils/Calculator';
+
+const calculator = new Calculator();
 
 export const App = () => {
   return (
     <>
       <ErrorBoundary>
         <Provider store={store}>
-          <CalculatorProvider>
-            <Theme>
+          <CalculatorProvider calculator={calculator}>
+            <ThemeProvider>
               <GlobalStyles />
               <Router />
-            </Theme>
+            </ThemeProvider>
           </CalculatorProvider>
         </Provider>
       </ErrorBoundary>

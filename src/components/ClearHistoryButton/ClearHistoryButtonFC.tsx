@@ -1,10 +1,10 @@
-import { useCalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
-import { useActions } from '@hooks/useActions';
+import { useCalculatorContext } from '@components/CalculatorProvider';
+import { useTypedActions } from '@hooks/useTypedActions';
 import { StyledClearButton } from './ClearHistoryButton.style';
 
 export const ClearHistoryButtonFC = () => {
   const { calculator } = useCalculatorContext();
-  const { changeDisplayExpression, changeDisplayResult, clearHistory } = useActions();
+  const { changeDisplayExpression, changeDisplayResult, clearHistory } = useTypedActions();
 
   const resetAllHistory = () => {
     calculator.clearAll();

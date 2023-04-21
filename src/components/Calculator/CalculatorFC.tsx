@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { ControlPanelFC } from '@components/ControlPanel/ControlPanelFC';
-import { DisplayFC } from '@components/Display/DisplayFC';
-import { KeypadFC } from '@components/Keypad/KeypadFC';
-import { CalculatorWrapper, StyledCalculator } from '@components/Calculator/Calculator.style';
-import { HistoryFC } from '@components/History/HistoryFC';
+import { ControlPanelFC } from '@components/ControlPanel';
+import { DisplayFC } from '@components/Display';
+import { KeypadFC } from '@components/Keypad';
+import { HistoryFC } from '@components/History';
+import { CalculatorWrapper, StyledCalculator } from './Calculator.style';
 
 export const CalculatorFC = () => {
   const [isHistoryOpen, setIsHistoryOpen] = useState<boolean>(false);
