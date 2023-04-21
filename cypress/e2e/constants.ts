@@ -12,4 +12,4 @@ export const primaryBGColors = {
   colored: 'rgb(227, 228, 160)',
 };
 
-export const maxEntryLength = 21;
+export const maxEntryLength = 18;
