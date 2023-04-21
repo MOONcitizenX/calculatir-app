@@ -1,4 +1,2 @@
-import { HistoryCC } from './HistoryCC';
-import { HistoryFC } from './HistoryFC';
-
-export { HistoryCC, HistoryFC };
+export { HistoryCC } from './HistoryCC';
+export { HistoryFC } from './HistoryFC';

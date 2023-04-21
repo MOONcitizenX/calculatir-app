@@ -1,4 +1,2 @@
-import { ThemeSwitcherCC } from './ThemeSwitcherCC';
-import { ThemeSwitcherFC } from './ThemeSwitcherFC';
-
-export { ThemeSwitcherCC, ThemeSwitcherFC };
+export { ThemeSwitcherCC } from './ThemeSwitcherCC';
+export { ThemeSwitcherFC } from './ThemeSwitcherFC';

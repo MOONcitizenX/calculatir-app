@@ -38,8 +38,8 @@ export const calculate = (polishToken: Array<string | Operator | Brackets>) => {
     if (Number(numbers[0]) > 2 ** 53 - 1 || Number(numbers[0]) < -(2 ** 53 - 1)) {
       return CalculatorErrors.TOO_BIG;
     }
-    if (numbers[0].length > maxEntryLength) {
-      return CalculatorErrors.TOO_BIG;
+    if (numbers[0].length >= maxEntryLength) {
+      return CalculatorErrors.TOO_LONG;
     }
     return numbers[0];
   }

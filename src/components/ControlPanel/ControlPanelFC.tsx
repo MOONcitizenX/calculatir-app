@@ -11,7 +11,7 @@ export const ControlPanelFC = forwardRef<HTMLDivElement, ControlPanelFCProps>(
     return (
       <StyledControlPanel ref={ref}>
         <p>Toggle history</p>
-        <ToggleHistoryButton onClick={toggleHistory}>
+        <ToggleHistoryButton onClick={toggleHistory} data-testid="toggle-history">
           {isHistoryOpen ? '<' : '>'}
         </ToggleHistoryButton>
       </StyledControlPanel>

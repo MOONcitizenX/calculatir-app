@@ -1,2 +1,4 @@
 vite-env.d.ts
 vite.config.ts
+cypress.config.ts
+cypress

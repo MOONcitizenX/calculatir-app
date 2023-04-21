@@ -4,10 +4,16 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import browserslistToEsbuild from 'browserslist-to-esbuild';
+import VitePluginReactRemoveAttributes from 'vite-plugin-react-remove-attributes';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePluginReactRemoveAttributes({
+      attributes: ['data-testid'],
+    }),
+  ],
   build: { target: browserslistToEsbuild(['>0.2%', 'not dead', 'not op_mini all']) },
   server: {
     open: true,

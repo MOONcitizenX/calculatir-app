@@ -39,7 +39,7 @@ class ThemeSwitcher extends Component<ThemeSwitcherProps> {
             onChange={setLightTheme}
             checked={currentTheme === 'light'}
           />
-          <StyledSwitch>Light</StyledSwitch>
+          <StyledSwitch data-testid="light-theme-switch">Light</StyledSwitch>
         </StyledLabel>
 
         <StyledLabel>
@@ -49,7 +49,7 @@ class ThemeSwitcher extends Component<ThemeSwitcherProps> {
             onChange={setDarkTheme}
             checked={currentTheme === 'dark'}
           />
-          <StyledSwitch>Dark</StyledSwitch>
+          <StyledSwitch data-testid="dark-theme-switch">Dark</StyledSwitch>
         </StyledLabel>
 
         <StyledLabel>
@@ -59,7 +59,7 @@ class ThemeSwitcher extends Component<ThemeSwitcherProps> {
             onChange={setColoredTheme}
             checked={currentTheme === 'colored'}
           />
-          <StyledSwitch>Colored</StyledSwitch>
+          <StyledSwitch data-testid="colored-theme-switch">Colored</StyledSwitch>
         </StyledLabel>
       </SwitcherWrapper>
     );

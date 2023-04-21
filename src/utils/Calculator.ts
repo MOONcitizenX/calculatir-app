@@ -195,7 +195,7 @@ export class Calculator extends EventTarget {
 
   private isTooLong() {
     const lastAction = this.getLastAction();
-    if (lastAction !== undefined && lastAction.length > maxEntryLength) {
+    if (lastAction !== undefined && lastAction.length >= maxEntryLength) {
       return true;
     }
     return false;

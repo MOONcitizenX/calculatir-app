@@ -28,8 +28,8 @@ export const DisplayFC = () => {
 
   return (
     <StyledDisplay>
-      <StyledExpression>{expression}</StyledExpression>
-      <StyledResult>{result}</StyledResult>
+      <StyledExpression data-testid="expression">{expression}</StyledExpression>
+      <StyledResult data-testid="result">{result}</StyledResult>
     </StyledDisplay>
   );
 };

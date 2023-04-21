@@ -1,4 +1,2 @@
-import { SettingsPageCC } from './SettingsPageCC';
-import { SettingsPageFC } from './SettingsPageFC';
-
-export { SettingsPageCC, SettingsPageFC };
+export { SettingsPageCC } from './SettingsPageCC';
+export { SettingsPageFC } from './SettingsPageFC';
