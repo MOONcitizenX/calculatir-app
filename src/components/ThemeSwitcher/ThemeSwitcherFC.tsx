@@ -10,35 +10,32 @@ export const ThemeSwitcherFC = () => {
     <SwitcherWrapper>
       <StyledLabel>
         <input
-          data-testid="light-theme-switch"
           type="radio"
           name="theme"
           onChange={setLightTheme}
           checked={currentTheme === 'light'}
         />
-        <StyledSwitch>Light</StyledSwitch>
+        <StyledSwitch data-testid="light-theme-switch">Light</StyledSwitch>
       </StyledLabel>
 
       <StyledLabel>
         <input
-          data-testid="dark-theme-switch"
           type="radio"
           name="theme"
           onChange={setDarkTheme}
           checked={currentTheme === 'dark'}
         />
-        <StyledSwitch>Dark</StyledSwitch>
+        <StyledSwitch data-testid="dark-theme-switch">Dark</StyledSwitch>
       </StyledLabel>
 
       <StyledLabel>
         <input
-          data-testid="colored-theme-switch"
           type="radio"
           name="theme"
           onChange={setColoredTheme}
           checked={currentTheme === 'colored'}
         />
-        <StyledSwitch>Colored</StyledSwitch>
+        <StyledSwitch data-testid="colored-theme-switch">Colored</StyledSwitch>
       </StyledLabel>
     </SwitcherWrapper>
   );
