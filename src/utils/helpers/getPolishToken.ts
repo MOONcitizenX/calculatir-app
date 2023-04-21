@@ -9,10 +9,10 @@ export const getPolishToken = (tokens: Array<string | Operator | Brackets>) => {
   tokens.forEach((entry) => {
     if (isNumeric(entry)) {
       polishToken.push(entry);
-    } else if (entry === Brackets.openingBracket) {
+    } else if (entry === Brackets.OPEN_BRACKET) {
       stack.push(entry);
-    } else if (entry === Brackets.closingBracket) {
-      while (stack[stack.length - 1] !== Brackets.openingBracket) {
+    } else if (entry === Brackets.CLOSE_BRACKET) {
+      while (stack[stack.length - 1] !== Brackets.OPEN_BRACKET) {
         const lastOperation = stack.pop();
         if (lastOperation !== undefined) {
           polishToken.push(lastOperation);
