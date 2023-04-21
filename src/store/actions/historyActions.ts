@@ -4,7 +4,7 @@ export enum HistoryActionTypes {
 }
 
 export interface HistoryAction {
-  type: 'ADD' | 'CLEAR';
+  type: HistoryActionTypes;
   payload?: string;
 }
 

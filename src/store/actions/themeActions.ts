@@ -8,7 +8,7 @@ export enum ThemeActionTypes {
 }
 
 export interface ThemeAction {
-  type: 'LIGHT' | 'DARK' | 'COLORED';
+  type: ThemeActionTypes;
   payload: DefaultTheme;
 }
 
