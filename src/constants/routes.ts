@@ -1,10 +1,9 @@
-const ROUTES = {
-  root: '/',
-  settingsFC: 'settings',
-  homeCC: 'homecc',
-  settingsCC: 'settingscc',
-  notFound: '404',
-  wildCard: '*',
+const Routes = {
+  ROOT: '/',
+  SETTINGS_FC: 'settings',
+  HOME_CC: 'homecc',
+  SETTINGS_CC: 'settingscc',
+  WILDCARD: '*',
 };
 
-export default ROUTES;
+export default Routes;

@@ -1,4 +1,4 @@
-import ROUTES from '@constants/routes';
+import Routes from '@constants/routes';
 
 export const ErrorFallback = () => {
   return (
@@ -14,7 +14,7 @@ export const ErrorFallback = () => {
       }}
     >
       <p style={{ color: 'red', fontSize: '24px' }}>Oops, Something went wrong...</p>
-      <a href={ROUTES.root}>Try navigating back to Home Page</a>
+      <a href={Routes.ROOT}>Try navigating back to Home Page</a>
     </div>
   );
 };

@@ -35,7 +35,7 @@ class Display extends Component<DisplayProps> {
     const { calculator } = this.context!;
     const { changeDisplayExpression, changeDisplayResult } = this.props;
     changeDisplayExpression(calculator.expression);
-    changeDisplayResult(calculator.result);
+    changeDisplayResult(calculator.calculateResult());
   };
 
   componentDidMount(): void {

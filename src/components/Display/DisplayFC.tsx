@@ -16,7 +16,7 @@ export const DisplayFC = () => {
   useEffect(() => {
     const updateOnChange = () => {
       changeDisplayExpression(calculator.expression);
-      changeDisplayResult(calculator.result);
+      changeDisplayResult(calculator.calculateResult());
     };
 
     calculator.addEventListener(changeEvent, updateOnChange);
