@@ -1,4 +1,2 @@
-import { DisplayCC } from './DisplayCC';
-import { DisplayFC } from './DisplayFC';
-
-export { DisplayCC, DisplayFC };
+export { DisplayCC } from './DisplayCC';
+export { DisplayFC } from './DisplayFC';

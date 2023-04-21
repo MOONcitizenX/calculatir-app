@@ -1,4 +1,2 @@
-import { SettingsCC } from './SettingsCC';
-import { SettingsFC } from './SettingsFC';
-
-export { SettingsCC, SettingsFC };
+export { SettingsCC } from './SettingsCC';
+export { SettingsFC } from './SettingsFC';

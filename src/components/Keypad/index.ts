@@ -1,4 +1,2 @@
-import { KeypadCC } from './KeypadCC';
-import { KeypadFC } from './KeypadFC';
-
-export { KeypadCC, KeypadFC };
+export { KeypadCC } from './KeypadCC';
+export { KeypadFC } from './KeypadFC';

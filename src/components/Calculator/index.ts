@@ -1,4 +1,2 @@
-import { CalculatorCC } from './CalculatorCC';
-import { CalculatorFC } from './CalculatorFC';
-
-export { CalculatorCC, CalculatorFC };
+export { CalculatorCC } from './CalculatorCC';
+export { CalculatorFC } from './CalculatorFC';

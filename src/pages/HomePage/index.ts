@@ -1,4 +1,2 @@
-import { HomePageCC } from './HomePageCC';
-import { HomePageFC } from './HomePageFC';
-
-export { HomePageCC, HomePageFC };
+export { HomePageCC } from './HomePageCC';
+export { HomePageFC } from './HomePageFC';

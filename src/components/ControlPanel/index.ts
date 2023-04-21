@@ -1,4 +1,2 @@
-import { ControlPanelCC } from './ControlPanelCC';
-import { ControlPanelFC } from './ControlPanelFC';
-
-export { ControlPanelCC, ControlPanelFC };
+export { ControlPanelCC } from './ControlPanelCC';
+export { ControlPanelFC } from './ControlPanelFC';

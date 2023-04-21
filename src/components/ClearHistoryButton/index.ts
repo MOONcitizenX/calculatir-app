@@ -1,4 +1,2 @@
-import { ClearHistoryButtonCC } from './ClearHistoryButtonCC';
-import { ClearHistoryButtonFC } from './ClearHistoryButtonFC';
-
-export { ClearHistoryButtonCC, ClearHistoryButtonFC };
+export { ClearHistoryButtonCC } from './ClearHistoryButtonCC';
+export { ClearHistoryButtonFC } from './ClearHistoryButtonFC';
