@@ -1,17 +1,13 @@
 import { isNumeric } from './helpers/isNumeric';
 import { calculate } from './helpers/calculate';
 import { getPolishToken } from './helpers/getPolishToken';
-import { changeEvent } from '@constants/calculatorEvent';
+import { changeEvent, equalsEvent } from '@constants/calculatorEvent';
 import { CalculatorErrors, maxEntryLength } from '@constants/calculatorErrors';
 import { Brackets, Operations, type Operator, OperatorsArray } from '@constants/operators';
 
 export class Calculator extends EventTarget {
   private _expression: string[] = [];
   private openBracketsCount = 0;
-
-  constructor(private readonly addToHistory: (val: string) => void) {
-    super();
-  }
 
   get expression() {
     const expression = this._expression.join(' ');
@@ -124,8 +120,15 @@ export class Calculator extends EventTarget {
 
     const result = this.calculateResult();
     if (result !== '' && this._expression.length > 1) {
-      this.addToHistory(`${this.expression} = ${result}`);
       this.dispatchEvent(new CustomEvent(changeEvent));
+      this.dispatchEvent(
+        new CustomEvent(equalsEvent, {
+          detail: {
+            expression: this.expression,
+            result,
+          },
+        })
+      );
       this._expression = [result];
       this.openBracketsCount = 0;
     }

@@ -1,9 +1,11 @@
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
 import { useTypedActions } from '@hooks/useTypedActions';
-import { Calculator } from '@utils/Calculator';
+import { type Calculator } from '@utils/Calculator';
+import { equalsEvent } from '@constants/calculatorEvent';
 
 interface CalculatorProviderProps {
   children?: React.ReactNode;
+  calculator: Calculator;
 }
 
 export interface Context {
@@ -20,14 +22,30 @@ export const useCalculatorContext = () => {
   throw new Error('No calculator context');
 };
 
-export const CalculatorProvider: React.FC<CalculatorProviderProps> = ({ children }) => {
+export const CalculatorProvider: React.FC<CalculatorProviderProps> = ({ children, calculator }) => {
   const { addHistory } = useTypedActions();
-
-  const calculator = new Calculator(addHistory);
 
   const context: Context = {
     calculator,
   };
+
+  useEffect(() => {
+    const addToHistory = (event: Event) => {
+      const { expression, result } = (
+        event as CustomEvent<{
+          expression: string;
+          result: string;
+        }>
+      ).detail;
+      addHistory(`${expression} = ${result}`);
+    };
+
+    calculator.addEventListener(equalsEvent, addToHistory);
+
+    return () => {
+      calculator.removeEventListener(equalsEvent, addToHistory);
+    };
+  }, [addHistory, calculator]);
 
   return <CalculatorContext.Provider value={context}>{children}</CalculatorContext.Provider>;
 };
