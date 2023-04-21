@@ -40,7 +40,11 @@ class ClearHistoryButton extends Component<ClearHistoryButtonProps> {
   };
 
   render() {
-    return <StyledClearButton onClick={this.resetAllHistory}>Clear history</StyledClearButton>;
+    return (
+      <StyledClearButton onClick={this.resetAllHistory} data-testid="clear-history">
+        Clear history
+      </StyledClearButton>
+    );
   }
 }
 

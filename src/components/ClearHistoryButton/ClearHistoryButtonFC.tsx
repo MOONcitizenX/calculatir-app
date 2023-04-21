@@ -13,5 +13,9 @@ export const ClearHistoryButtonFC = () => {
     changeDisplayResult('0');
   };
 
-  return <StyledClearButton onClick={resetAllHistory}>Clear history</StyledClearButton>;
+  return (
+    <StyledClearButton onClick={resetAllHistory} data-testid="clear-history">
+      Clear history
+    </StyledClearButton>
+  );
 };
