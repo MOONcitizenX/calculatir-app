@@ -22,3 +22,22 @@ describe('Routing', () => {
     cy.contains('Oops').should('exist');
   });
 });
+
+describe('Navigating', () => {
+  beforeEach(() => {
+    cy.visit(routes.root);
+  });
+  it('navigates to home page FC', () => {
+    cy.visit(routes.settingsFC);
+    cy.contains('HomeFC').click().should('have.class', 'active');
+  });
+  it('navigates to home page CC', () => {
+    cy.contains('HomeCC').click().should('have.class', 'active');
+  });
+  it('navigates to settings page FC', () => {
+    cy.contains('SettingsFC').click().should('have.class', 'active');
+  });
+  it('navigates to settings page CC', () => {
+    cy.contains('SettingsCC').click().should('have.class', 'active');
+  });
+});
