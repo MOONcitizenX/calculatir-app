@@ -34,10 +34,8 @@ class Display extends Component<DisplayProps> {
   updateOnChange = () => {
     const { calculator } = this.context!;
     const { changeDisplayExpression, changeDisplayResult } = this.props;
-    const expression = calculator.expression;
-    changeDisplayExpression(expression.length > 0 ? expression : '0');
-    const result = calculator.result;
-    changeDisplayResult(result.length > 0 ? result : '');
+    changeDisplayExpression(calculator.expression);
+    changeDisplayResult(calculator.result);
   };
 
   componentDidMount(): void {
