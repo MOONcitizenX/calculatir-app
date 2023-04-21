@@ -24,20 +24,25 @@ describe('Routing', () => {
 });
 
 describe('Navigating', () => {
+  const baseUrl = Cypress.config().baseUrl!;
   beforeEach(() => {
     cy.visit(routes.root);
   });
   it('navigates to home page FC', () => {
     cy.visit(routes.settingsFC);
-    cy.contains('HomeFC').click().should('have.class', 'active');
+    cy.contains('HomeFC').click();
+    cy.url().should('equal', new URL(routes.root, baseUrl).toString());
   });
   it('navigates to home page CC', () => {
-    cy.contains('HomeCC').click().should('have.class', 'active');
+    cy.contains('HomeCC').click();
+    cy.url().should('equal', new URL(routes.homeCC, baseUrl).toString());
   });
   it('navigates to settings page FC', () => {
-    cy.contains('SettingsFC').click().should('have.class', 'active');
+    cy.contains('SettingsFC').click();
+    cy.url().should('equal', new URL(routes.settingsFC, baseUrl).toString());
   });
   it('navigates to settings page CC', () => {
-    cy.contains('SettingsCC').click().should('have.class', 'active');
+    cy.contains('SettingsCC').click();
+    cy.url().should('equal', new URL(routes.settingsCC, baseUrl).toString());
   });
 });

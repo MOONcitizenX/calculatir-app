@@ -31,7 +31,7 @@ describe('Error handling', () => {
       cy.get('[data-testid="result"]').should('have.text', 'Too big numbers');
     });
 
-    it('should show "Too big numbers" on trying to input more than 18 chars', () => {
+    it('should show "Too long input" on trying to input more than 18 chars', () => {
       cy.visit(calc);
       cy.get('[data-testid="0"]').click();
       cy.get('[data-testid="."]').click();
@@ -39,7 +39,7 @@ describe('Error handling', () => {
         cy.get('[data-testid="9"]').click();
       }
 
-      cy.get('[data-testid="result"]').should('have.text', 'Too big numbers');
+      cy.get('[data-testid="result"]').should('have.text', 'Too long input');
     });
   }
 });

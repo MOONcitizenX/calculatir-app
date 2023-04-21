@@ -33,8 +33,8 @@ class Display extends Component<DisplayProps> {
   declare context: React.ContextType<typeof CalculatorContext>;
   private oldCalculator: Calculator;
 
-  constructor(props: DisplayProps) {
-    super(props);
+  constructor(props: DisplayProps, context: React.ContextType<typeof CalculatorContext>) {
+    super(props, context);
     this.oldCalculator = this.context!.calculator;
   }
 
