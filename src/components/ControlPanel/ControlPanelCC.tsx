@@ -11,7 +11,7 @@ export class ControlPanelCC extends Component<ControlPanelCCProps> {
     return (
       <StyledControlPanel>
         <p>Toggle history</p>
-        <ToggleHistoryButton onClick={toggleHistory}>
+        <ToggleHistoryButton onClick={toggleHistory} data-testid="toggle-history">
           {isHistoryOpen ? '<' : '>'}
         </ToggleHistoryButton>
       </StyledControlPanel>
