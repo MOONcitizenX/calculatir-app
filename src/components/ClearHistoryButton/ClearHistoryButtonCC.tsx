@@ -6,8 +6,6 @@ import { changeDisplayExpression, changeDisplayResult } from '@store/actions/dis
 import { clearHistory } from '@store/actions/historyActions';
 import { StyledClearButton } from './ClearHistoryButton.style';
 
-const mapState = () => ({});
-
 const mapDispatch = (dispatch: Dispatch<AnyAction>) => {
   return {
     changeDisplayExpression: (expression: string) => {
@@ -22,7 +20,7 @@ const mapDispatch = (dispatch: Dispatch<AnyAction>) => {
   };
 };
 
-const connector = connect(mapState, mapDispatch);
+const connector = connect(null, mapDispatch);
 
 type ClearHistoryButtonProps = ConnectedProps<typeof connector>;
 
