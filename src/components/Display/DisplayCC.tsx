@@ -54,8 +54,8 @@ class Display extends Component<DisplayProps> {
     const { expression, result } = this.props;
     return (
       <StyledDisplay>
-        <StyledExpression>{expression}</StyledExpression>
-        <StyledResult>{result}</StyledResult>
+        <StyledExpression data-testid="expression">{expression}</StyledExpression>
+        <StyledResult data-testid="result">{result}</StyledResult>
       </StyledDisplay>
     );
   }
