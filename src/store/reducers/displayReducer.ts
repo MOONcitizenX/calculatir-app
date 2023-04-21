@@ -1,14 +1,11 @@
 import { DisplayActionTypes, type DisplayAction } from '@store/actions/displayActions';
 
-export interface DisplayState {
-  expression: string;
-  result: string;
-}
-
-const initialDisplay: DisplayState = {
+const initialDisplay = {
   expression: '0',
   result: '0',
 };
+
+type DisplayState = typeof initialDisplay;
 
 export const displayReducer = (
   state: DisplayState = initialDisplay,
