@@ -1,10 +1,12 @@
 import { type HistoryAction, HistoryActionTypes } from '@store/actions/historyActions';
 
-const initialHistory = {
-  historyList: [] as unknown[],
-};
+export interface HistoryState {
+  historyList: Array<string | undefined>;
+}
 
-type HistoryState = typeof initialHistory;
+const initialHistory: HistoryState = {
+  historyList: [],
+};
 
 export const historyReducer = (
   state: HistoryState = initialHistory,

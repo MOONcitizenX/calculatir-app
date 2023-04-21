@@ -1,9 +1,9 @@
-import { useCalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
+import { useEffect } from 'react';
+import { useCalculatorContext } from '@components/CalculatorProvider';
 import { changeEvent } from '@constants/calculatorEvent';
-import { useActions } from '@hooks/useActions';
+import { useTypedActions } from '@hooks/useTypedActions';
 import { useTypedSelector } from '@hooks/useTypedSelector';
 import { StyledDisplay, StyledExpression, StyledResult } from './Display.style';
-import { useEffect } from 'react';
 
 export const DisplayFC = () => {
   const { calculator } = useCalculatorContext();
@@ -11,7 +11,7 @@ export const DisplayFC = () => {
   const expression = useTypedSelector((state) => state.display.expression);
   const result = useTypedSelector((state) => state.display.result);
 
-  const { changeDisplayExpression, changeDisplayResult } = useActions();
+  const { changeDisplayExpression, changeDisplayResult } = useTypedActions();
 
   useEffect(() => {
     const updateOnChange = () => {

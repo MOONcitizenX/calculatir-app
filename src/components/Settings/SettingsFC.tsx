@@ -1,5 +1,5 @@
-import { ClearHistoryButtonFC } from '@components/ClearHistoryButton/ClearHistoryButtonFC';
-import { ThemeSwitcherFC } from '@components/ThemeSwitcher/ThemeSwitcherFC';
+import { ClearHistoryButtonFC } from '@components/ClearHistoryButton';
+import { ThemeSwitcherFC } from '@components/ThemeSwitcher';
 import { StyledTitle } from '@styles/shared';
 import { CalculatorWrapper, StyledCalculator } from '@components/Calculator/Calculator.style';
 

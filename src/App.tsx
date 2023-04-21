@@ -3,7 +3,7 @@ import { ThemeProvider } from '@styles/ThemeProvider';
 import { Router } from '@router/Router';
 import { store } from './store';
 import GlobalStyles from '@styles/Global.styles';
-import { CalculatorProvider } from '@components/CalculatorProvider/CalculatorProvider';
+import { CalculatorProvider } from '@components/CalculatorProvider';
 import { ErrorBoundary } from '@components/ErrorBoundary/ErrorBoundary';
 
 export const App = () => {

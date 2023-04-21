@@ -6,12 +6,10 @@ import {
 } from 'react-router-dom';
 import Routes from '@constants/routes';
 
-import { RootLayout } from '@components/RootLayout/RootLayout';
-import { HomePageFC } from '@pages/HomePage/HomePageFC';
-import { SettingsPageFC } from '@pages/SettingsPage/SettingsPageFC';
-import { HomePageCC } from '@pages/HomePage/HomePageCC';
-import { SettingsPageCC } from '@pages/SettingsPage/SettingsPageCC';
-import { ErrorFallback } from '@components/ErrorBoundary/ErrorFallback';
+import { RootLayout } from '@components/RootLayout';
+import { HomePageFC, HomePageCC } from '@pages/HomePage';
+import { SettingsPageFC, SettingsPageCC } from '@pages/SettingsPage';
+import { ErrorFallback } from '@components/ErrorBoundary';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

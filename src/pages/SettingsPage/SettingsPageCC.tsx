@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { SettingsCC } from '@components/Settings/SettingsCC';
+import { SettingsCC } from '@components/Settings';
 
 export class SettingsPageCC extends Component {
   render() {

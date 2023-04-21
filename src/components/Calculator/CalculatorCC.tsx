@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { ControlPanelCC } from '@components/ControlPanel/ControlPanelCC';
-import { DisplayCC } from '@components/Display/DisplayCC';
-import { HistoryCC } from '@components/History/HistoryCC';
-import { KeypadCC } from '@components/Keypad/KeypadCC';
+import { ControlPanelCC } from '@components/ControlPanel';
+import { DisplayCC } from '@components/Display';
+import { HistoryCC } from '@components/History';
+import { KeypadCC } from '@components/Keypad';
 import { CalculatorWrapper, StyledCalculator } from './Calculator.style';
 
 interface CalculatorCCState {

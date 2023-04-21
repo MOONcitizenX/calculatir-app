@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { type AnyAction, type Dispatch } from 'redux';
 import { connect, type ConnectedProps } from 'react-redux';
-import { CalculatorContext } from '@components/CalculatorProvider/CalculatorProvider';
+import { CalculatorContext } from '@components/CalculatorProvider';
 import { type RootState } from '@store/reducers';
 import { changeDisplayExpression, changeDisplayResult } from '@store/actions/displayActions';
 import { changeEvent } from '@constants/calculatorEvent';

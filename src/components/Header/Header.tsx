@@ -1,4 +1,4 @@
-import { NavMenu } from '@components/NavMenu/NavMenu';
+import { NavMenu } from '@components/NavMenu';
 import { StyledHeader } from './Header.style';
 import { StyledContainer } from '@styles/shared';
 

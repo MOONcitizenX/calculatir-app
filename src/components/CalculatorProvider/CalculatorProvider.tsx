@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import { useActions } from '@hooks/useActions';
+import { useTypedActions } from '@hooks/useTypedActions';
 import { Calculator } from '@utils/Calculator';
 
 interface CalculatorProviderProps {
@@ -21,7 +21,7 @@ export const useCalculatorContext = () => {
 };
 
 export const CalculatorProvider: React.FC<CalculatorProviderProps> = ({ children }) => {
-  const { addHistory } = useActions();
+  const { addHistory } = useTypedActions();
 
   const calculator = new Calculator(addHistory);
 
